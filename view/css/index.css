@@ -1,0 +1,89 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: rgb(5, 92, 99);
+}
+h2{
+    width: 720px;
+    text-align: center;
+    margin:50px auto;
+}
+.main{
+    width: 720px;
+    min-height: 300px;
+    border: 2px solid #ffffff;
+    margin:  auto;
+    padding-bottom: 5px;
+}
+.title{
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #ccc;
+    display:flex;
+    justify-content:space-between;
+    margin-bottom: 5px;
+}
+.title span{
+    width: 120px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    color: rgb(255, 106, 0);
+    font-weight: bold; 
+    font-size: 17px;     
+}
+.concent{
+    width: 100%;
+    height: 50px;
+    border-bottom:1px solid rgb(172, 144, 144); 
+    cursor: pointer;
+    display:flex;
+    justify-content:space-between;
+    transition: all 0.3s;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+.concent-mark{
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+    background: rgba(0,0,0,0.9);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display:flex;
+    justify-content:space-around;
+}
+.concent-mark-a{
+    display: inline-block;
+    width: 130px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid #ccc;
+    background: rgba(255, 255, 255,0.3);
+    color: #ffffff;
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+.concent-mark-a:hover{
+    background: #ffffff;
+    color: rgb(255, 110, 6);
+}
+.concent span{
+    width: 120px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border: 1px solid #ccc;
+}
+.concent:hover{
+    background: #fff;
+    color: rgb(255, 110, 6);
+}
