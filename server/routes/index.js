@@ -16,13 +16,14 @@ var pool = mysql.createPool({
 /* GET users listing. */
 router.get('/', function (req, res, next) {
   var sql_id = req.query.sql_id; //1增2删3改
+  var id=req.query.id;
   switch (sql_id) {
     case '1':
       sql = "insert into blog_table values (null,'mysql','mysql的使用','2018/8/15','王老五','mysql最棒')";
       getData(sql);
       break;
     case '2':
-      sql = "delete from blog_table where id=26";
+      sql = "delete from blog_table where id="+id;
       getData(sql);
       break;
     case '3':

@@ -1,23 +1,29 @@
-$(function(){
+$(function () {
+    ajaxData();
     
-    $.ajax({
-        type: "GET",
-        url: "http://127.0.0.1:3001/",
-        dataType: "json",
-        data:{
-            sql_id:1
-        },
-        success: function (res) {
-            main(res.result);
-        },
-        error: function () {
-            alert("ajax请求错误");
-        }
-    });
+/*ajax请求函数*/
+    function ajaxData(sql_id,id) {
+        $.ajax({
+            type: "GET",
+            url: "http://127.0.0.1:3001/",
+            dataType: "json",
+            data: {
+                sql_id: sql_id,
+                id:id
+            },
+            success: function (res) {
+                main(res.result);
+            },
+            error: function () {
+                alert("ajax请求错误");
+            }
+        });
+    }
 
-    function main(data){
-        for(let i=0;i<data.length;i++){
-            var concentData=`<div class="concent">
+/*数据拼接到文档*/
+    function main(data) {
+        for (let i = 0; i < data.length; i++) {
+            var concentData = `<div class="concent">
             <span>${data[i].id}</span>
             <span>${data[i].title}</span>
             <span>${data[i].small_title}</span>
@@ -31,20 +37,34 @@ $(function(){
             <p class="concent-mark-a close">取消选定</p>
             </div>
         </div>`;
-        $('.main').append(concentData)
+            $('.concent-box').append(concentData)
+            // $('.concent-box').html(concentData)
         }
     }
 
-    /*效果*/
-    $(document).on('click','.concent',function(event){   //绑定未来元素，事件委托
+    /*动画效果——遮罩层*/
+    $(document).on('click', '.concent', function (event) { //绑定未来元素，事件委托
         event.stopPropagation();
-        $(this).find('.concent-mark').animate({top:'0'},'fast')
+        $(this).find('.concent-mark').animate({
+            top: '0'
+        }, 'fast')
     });
 
     /*取消选定*/
-    $(document).on('click','.close',function(event){
+    $(document).on('click', '.close', function (event) {
         event.stopPropagation();
-        $(this).parent().animate({top:'100%'},'fast')
+        $(this).parent().animate({
+            top: '100%'
+        }, 'fast')
+    });
+
+    /*删除选定 */
+    $(document).on('click', '.delete', function (event) {
+        event.stopPropagation();
+        var id=this.parentNode.parentNode.innerText.substr(0, 1);
+        console.log(id)
+        ajaxData(2,id)
+        $('.concent-box').html("")
     })
-    
+
 })
