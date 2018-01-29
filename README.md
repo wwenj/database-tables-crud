@@ -1,9 +1,9 @@
 # 前后端分离——基于mysql数据库的增删改查
 ## 项目截图
 
-![预览截图](https://github.com/wwenj/database-tables-crud/tree/master/Screenshots/1.png)
-![预览截图](https://github.com/wwenj/database-tables-crud/tree/master/Screenshots/2.png)
-![预览截图](https://github.com/wwenj/database-tables-crud/tree/master/Screenshots/3.png)
+![预览截图](https://github.com/wwenj/database-tables-crud/blob/master/Screenshots/1.png)
+![预览截图](https://github.com/wwenj/database-tables-crud/blob/master/Screenshots/2.png)
+![预览截图](https://github.com/wwenj/database-tables-crud/blob/master/Screenshots/3.png)
 
 ## 技术栈
 ### 前端
