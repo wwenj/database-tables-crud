@@ -34,7 +34,7 @@ $(function () {
             <div class="concent-mark">
             <p class="concent-mark-a add">新增数据</p>
             <p class="concent-mark-a delete" data-id=${data[i].id}>删除数据</p>
-            <p class="concent-mark-a updata">修改数据</p>
+            <p class="concent-mark-a updata" data-id=${data[i].id}>修改数据</p>
             <p class="concent-mark-a close">取消选定</p>
             </div>
         </div>`;
@@ -76,7 +76,7 @@ $(function () {
         $('.concent-box').html(""); //删除操作后原内容清楚，重新查询并拼接字符串
     });
 
-    /*新增数据*/
+    /*新增数据点击*/
     $(document).on('click', '.add', function (event) {
         event.stopPropagation();
         addMark('0');
@@ -102,5 +102,11 @@ $(function () {
         console.log(add_con);
         ajaxData(1, 1,add_con);
         $('.concent-box').html("");
+    });
+
+    //更新数据
+    $(document).on('click', '.updata', function (event) {
+        event.stopPropagation();
+        addMark('0');
     });
 })

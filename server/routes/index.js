@@ -16,21 +16,21 @@ var pool = mysql.createPool({
 /* GET users listing. */
 router.get('/', function (req, res, next) {
   var sql_id = req.query.sql_id; //接受1增2删3改
-  var id=req.query.id;//接受删除id
+  var id=req.query.id;//接受删除/更改id
   var add_con=req.query.add_con;
   console.log(add_con)
-  // var str=
+  // update my_student set name='wang1' where gender='男';
   switch (sql_id) {
     case '1':
       sql = `insert into blog_table values (null,'${add_con[1]}','${add_con[2]}','${add_con[3]}','${add_con[4]}','${add_con[5]}')`;
       getData(sql);
       break;
     case '2':
-      sql = "delete from blog_table where id="+id;
+      sql = `delete from blog_table where id=${id}`;
       getData(sql);
       break;
     case '3':
-      sql = "delete from blog_table where id=27";
+      sql = `update blog_table set title='${add_con[1]}',small_title='${add_con[2]}',timer='${add_con[3]}',zuozhe='${add_con[4]}',concent='${add_con[5]}' where id=${id}`;
       getData(sql);
       break;
     default:
