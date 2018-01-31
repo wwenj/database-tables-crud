@@ -3,7 +3,10 @@
     margin: 0;
 }
 body{
-    background: rgb(5, 92, 99);
+   
+    /* background: linear-gradient(45deg,#020031 0,#6d3353 100%); */
+    background:  rgb(5, 92, 99) url("../bs-docs-masthead-pattern.png");
+
 }
 h2{
     width: 720px;
@@ -16,6 +19,10 @@ h2{
     border: 2px solid #ffffff;
     margin:  auto;
     padding-bottom: 5px;
+    /* background: linear-gradient(45deg,#020031 0,#6d3353 100%); */
+    background: linear-gradient(45deg,rgb(3, 2, 102) 0,#9b4474 100%);
+    /* background: linear-gradient(45deg,#0f0e2c 0,#9c4e78 100%); */
+    /* background:url("../bs-docs-masthead-pattern.png"); */
 }
 .title{
     width: 100%;
